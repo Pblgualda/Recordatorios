@@ -1,5 +1,7 @@
 <script setup>
-  import InicioSesion from './components/InicioSesion.vue';
+  import Login from './components/Login.vue';
+  import Header from './components/Header.vue';
+  import Footer from './components/Footer.vue';
   import { getFirestore, addDoc, collection,  getDocs, deleteDoc, doc, query, where } from "firebase/firestore";
   import { useCollection } from "vuefire";
   import { signOut, getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword ,signInWithEmailAndPassword,
@@ -51,30 +53,17 @@
 </script>
 
 <template>
-  <nav>
-    <RouterLink to="/">Inicio</RouterLink>
-    <RouterLink to="/recordatorios">Recordatorios</RouterLink>
-    <RouterLink v-if="admin==true" to="/administracion">Administracion</RouterLink>
-  </nav>
+  <header>
+    <Header/>
+  </header>
   <main>
-    <!--Parte de Login-->
-      <div v-if="logueado==false">
-         <InicioSesion/>
-      </div>
-      <div v-else>
-        <div class="divIMG">
-          <img :src="imgusuario" alt="logoUsuarios">
-        </div>      
-      </div>
-    <!--Parte de vista-->
-      <div v-if="logueado==true">
         <RouterView />
-      </div>
-      <div v-else>
-        <h1>Inicia Sesion para acceder a todas las funcionalidades</h1>
-      </div>   
   </main>
+    <Footer/>
 </template>
+
+
+
 
 <style scoped>
 </style>

@@ -1,8 +1,4 @@
 <script setup>
-
-
-//Storage de imagenes
-
 //Imports
 import { getFirestore, addDoc, collection,  getDocs, setDoc, updateDoc, deleteDoc, doc, query, where, orderBy } from "firebase/firestore";
 import { useCollection } from "vuefire";

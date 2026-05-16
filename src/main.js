@@ -2,28 +2,44 @@ import { createApp } from 'vue'
 import {createRouter,createWebHistory} from 'vue-router';
 import App from './App.vue'
 import './assets/main.css'
-import LandingPage from './components/LandingPage.vue';
+import Inicio from './components/Inicio.vue';
 import Administracion from './components/Administracion.vue';
-import Recordatorio from './components/Recordatorio.vue';
+import Merchandising from './components/Merchandising.vue';
+import Sagas from './components/Sagas.vue';
+import Login from './components/Login.vue';
+import Perfil from './components/Perfil.vue';
+import Contacto from './components/Contacto.vue';
+import SobreNosotros from './components/SobreNosotros.vue';
+import Carrito from './components/Carrito.vue'
+import MerchandisingDetalle from './components/MerchandisingDetalle.vue'
+import VideojuegoDetalle from './components/VideojuegoDetalle.vue'
+import Pedidos from './components/Pedidos.vue'
 import { initializeApp } from 'firebase/app';
 import { VueFire } from 'vuefire';
-import  supabaseStorage  from './components/supabaseStorage.vue';
+import './assets/main.css'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBHuddPEWC7vS3i__m1LeaQ5eRDJfBac3w",
-  authDomain: "to-do-list-e5f92.firebaseapp.com",
-  projectId: "to-do-list-e5f92",
-  storageBucket: "to-do-list-e5f92.firebasestorage.app",
-  messagingSenderId: "206880014500",
-  appId: "1:206880014500:web:e5c4423f4c9e51d5c1e631"
+  apiKey: "AIzaSyCAeZjJUv8fttddhk4iRKYb0EIGA0-1Ofk",
+  authDomain: "headbuke.firebaseapp.com",
+  projectId: "headbuke",
+  storageBucket: "headbuke.firebasestorage.app",
+  messagingSenderId: "635234940050",
+  appId: "1:635234940050:web:b45150fcfed88de5e1624b"
 };
 
 const routes = [
-    { path: "/", component: LandingPage},
-    { path: '/recordatorios', component: Recordatorio},
-    { path: '/administracion', component: Administracion},
-    { path: '/recordatorio',name:'Recordatorio', component: Recordatorio}
+    { path: "/", component: Inicio},
+    { path: '/merchandising', component: Merchandising},
+    { path: '/merchandising/:id', component: MerchandisingDetalle},
+    { path: '/sagas', component: Sagas},
+    { path: '/sagas/:id', component: VideojuegoDetalle},
+    { path: '/login', component: Login},
+    { path: '/perfil', component: Perfil},
+    { path: '/pedidos', component: Pedidos},
+    { path: '/contacto', component: Contacto },
+    { path: '/sobre-nosotros', component: SobreNosotros },
+    { path: '/carrito', component: Carrito }
 ]
 
 export const router = createRouter({
